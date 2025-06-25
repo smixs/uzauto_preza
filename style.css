@@ -508,7 +508,7 @@ ul li:before {
 
 /* Research list */
 .research-list {
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .research-list-item {
@@ -531,6 +531,106 @@ ul li:before {
     height: 20px;
     stroke: #0056B3;
     flex-shrink: 0;
+}
+
+/* Research section with notice */
+.research-section-with-notice {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    margin: 1.5rem 0;
+}
+
+.research-content {
+    flex: 1;
+}
+
+/* Notice cards container */
+.notice-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Privacy notice card */
+.privacy-notice-card {
+    background: #E0F2FE;
+    border: 1px solid #0284C7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 320px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 86, 179, 0.1);
+}
+
+.privacy-notice-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.privacy-notice-icon i {
+    width: 24px;
+    height: 24px;
+    stroke: #0056B3;
+}
+
+.privacy-notice-content {
+    flex: 1;
+}
+
+.privacy-notice-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Openness notice card */
+.openness-notice-card {
+    background: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%);
+    border: 1px solid #0284C7;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 320px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.15);
+}
+
+.openness-notice-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.openness-notice-icon i {
+    width: 24px;
+    height: 24px;
+    stroke: #0056B3;
+}
+
+.openness-notice-content {
+    flex: 1;
+}
+
+.openness-notice-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* Bot features */
@@ -1139,6 +1239,16 @@ ul li:before {
     
     .results-timeline {
         grid-template-columns: 1fr;
+    }
+    
+    .research-section-with-notice {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .privacy-notice-card,
+    .openness-notice-card {
+        width: 100%;
     }
     
     .trust-table {
