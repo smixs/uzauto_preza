@@ -1786,3 +1786,116 @@ ul li:before {
         margin-right: 0;
     }
 }
+
+/* Analytics link with QR code */
+.analytics-link {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #F9FAFB;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    transition: all 300ms ease-out;
+}
+
+.analytics-link:hover {
+    background: #F3F4F6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.analytics-info {
+    flex: 1;
+}
+
+.link-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Example questions */
+.example-questions {
+    margin-top: 1rem;
+}
+
+.questions-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.questions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.questions-list li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.questions-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #9CA3AF;
+}
+
+/* QR Code Container */
+.qr-container {
+    position: relative;
+    padding: 1rem;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 300ms ease;
+}
+
+.qr-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.qr-container img {
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+.qr-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6B7280;
+}
+
+@media (max-width: 768px) {
+    .analytics-link {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .qr-container {
+        margin: 0 auto;
+    }
+    
+    .qr-container img {
+        width: 80px;
+        height: 80px;
+    }
+}
