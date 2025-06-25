@@ -1121,6 +1121,104 @@ ul li:before {
     margin-bottom: 0;
 }
 
+/* Principles grid for slide 12 */
+.principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.principles-column {
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 300ms ease;
+}
+
+.principles-column.we-do {
+    border: 2px solid #059669;
+}
+
+.principles-column.we-dont {
+    border: 2px solid #DC2626;
+}
+
+.principles-column:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.principles-column h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.principles-column.we-do h3 {
+    color: #059669;
+}
+
+.principles-column.we-dont h3 {
+    color: #DC2626;
+}
+
+.principles-column .principles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.principles-column .principles-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.principles-column.we-do .principles-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #059669;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.principles-column.we-dont .principles-list li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #DC2626;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Result summary box */
+.result-summary {
+    background: linear-gradient(135deg, #E0F2FE 0%, #F0F9FF 100%);
+    border: 1px solid #0284C7;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.1);
+}
+
+.result-summary p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.result-summary p:last-child {
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    color: #0056B3;
+    font-weight: 600;
+}
+
 /* Trust table */
 .trust-table {
     width: 100%;
@@ -1612,6 +1710,20 @@ ul li:before {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+    /* Principles grid mobile */
+    .principles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .principles-column {
+        padding: 1.5rem;
+    }
+    
+    .principles-column .principles-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
     .navigation {
         right: 20px;
     }
