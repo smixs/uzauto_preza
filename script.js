@@ -169,6 +169,11 @@ function animateSlideContent(slide) {
         lucide.createIcons();
     }
     
+    // Skip animation if slide is not visible
+    if (!slide.classList.contains('active')) {
+        return;
+    }
+    
     // Animate numbers
     const metrics = slide.querySelectorAll('.metric-value[data-value]');
     metrics.forEach(metric => {
@@ -229,17 +234,26 @@ function animateSlideContent(slide) {
     // Animate optimization bars
     const optBars = slide.querySelectorAll('.opt-bar');
     optBars.forEach((bar, index) => {
-        const height = bar.style.height;
-        bar.style.height = '0';
+        // Store original height
+        const originalHeight = bar.style.height || bar.getAttribute('data-height');
+        if (!bar.getAttribute('data-height')) {
+            bar.setAttribute('data-height', originalHeight);
+        }
+        
+        // Reset for animation
         bar.style.transition = 'none';
+        bar.style.height = '0';
         
-        // Force reflow
-        bar.offsetHeight;
+        // Force browser to apply the change
+        void bar.offsetWidth;
         
-        setTimeout(() => {
-            bar.style.transition = 'height 1s ease-out';
-            bar.style.height = height;
-        }, 400 + index * 150);
+        // Animate to original height
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                bar.style.transition = 'height 1s ease-out';
+                bar.style.height = originalHeight;
+            }, 400 + index * 150);
+        });
     });
     
     // Fade in elements with delay
